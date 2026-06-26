@@ -7,6 +7,12 @@ def load_image(url):
   req = requests.get(url, headers=headers)
   return req.content
 
+st.set_page_config(
+   page_title="Players",
+   page_icon='🏃',
+   layout = 'wide'
+)
+
 df_fifa = st.session_state['data']
 
 clubes = df_fifa["Club"].unique()
@@ -37,3 +43,14 @@ with col3:
    st.markdown(
   f"**Peso**: {df_jogadores['Weight(lbs.)']*0.4535:.2f} kgs")
 st.divider()
+
+st.subheader(f"Overall {df_jogadores['Overall']}")
+st.progress(int(df_jogadores['Overall']))
+
+col5, col6, col7, col8 = st.columns(4)
+col5.metric(
+  f"**Valor de mercado**:", f"£ {df_jogadores['Value(£)']:,}")
+col6.metric(
+  f"**Remuneração semanal**:", f"£ {df_jogadores['Wage(£)']:,}")
+col7.metric(
+  f"**Cláusula de contrato**", f"£ {df_jogadores['Release Clause(£)']:,}")
