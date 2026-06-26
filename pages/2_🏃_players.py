@@ -27,10 +27,13 @@ st.markdown(f"**Clube**: {df_jogadores['Club']}")
 st.markdown(f"**Posição**: {df_jogadores['Position']}")
 
 col1, col2, col3, col4 = st.columns(4)
-col1 = st.markdown(
+with col1: 
+   st.markdown(
   f"**Idade**: {df_jogadores['Age']} anos")
-col2 = st.markdown(
+with col2:
+   st.markdown(
   f"**Altura**: {df_jogadores['Height(cm.)']/100} m")
-col3 = st.markdown(
+with col3:
+   st.markdown(
   f"**Peso**: {df_jogadores['Weight(lbs.)']*0.4535:.2f} kgs")
 st.divider()
