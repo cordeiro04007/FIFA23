@@ -22,9 +22,8 @@ st.sidebar.markdown('Desenvolvido por: '
 '[Alex Cordeiro](https://github.com/cordeiro04007)'
 )
 
-button = st.button('Acesse os dados no Kaggle')
-if button:
-    webbrowser.open_new_tab('https://www.kaggle.com/datasets/kevwesophia/fifa23-official-datasetclean-data')
+button = st.link_button('Acesse os dados no Kaggle',
+                        'https://www.kaggle.com/datasets/kevwesophia/fifa23-official-datasetclean-data')
 
 st.markdown("""
             O conjunto de dados de jogadores
