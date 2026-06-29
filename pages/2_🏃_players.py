@@ -24,7 +24,6 @@ jogadores = df_clubes["Name"].unique()
 jogador_option = st.sidebar.selectbox('Jogador:', jogadores)
 
 df_jogadores = df_fifa[df_fifa['Name']==jogador_option].iloc[0]
-# df_jogadores
 
 st.image(load_image(df_jogadores['Photo']))
 st.title(df_jogadores['Name'])
